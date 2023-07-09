@@ -1,0 +1,168 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Contoso API",
+    "description": "Contoso API Information",
+    "contact": {
+      "name": "Gisela Torres"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/swagger.json": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/invoices": {
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "description": "Endpoint to return invoices",
+        "operationId": "getInvoices",
+        "responses": {
+          "200": {
+            "description": "Invoices returned successfully",
+            "schema": {
+              "$ref": "#/definitions/Invoices"
+            }
+          }
+        }
+      }
+    },
+    "/accounts": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "description": "Endpoint to return accounts",
+        "operationId": "getAccounts",
+        "responses": {
+          "200": {
+            "description": "Accounts returned successfully",
+            "schema": {
+              "$ref": "#/definitions/Accounts"
+            }
+          }
+        }
+      }
+    },
+    "/support": {
+      "get": {
+        "tags": [
+          "Support"
+        ],
+        "description": "Endpoint to return support cases",
+        "operationId": "getCases",
+        "responses": {
+          "200": {
+            "description": "Cases returned successfully",
+            "schema": {
+              "$ref": "#/definitions/SupportCases"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Invoices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "example": "2021-05-05"
+          },
+          "accountName": {
+            "type": "string",
+            "example": "Franecki Group"
+          },
+          "contact": {
+            "type": "string",
+            "example": "Cassidy.Lemke81@yahoo.com"
+          },
+          "price": {
+            "type": "number",
+            "example": 380
+          },
+          "status": {
+            "type": "string",
+            "example": "Paid"
+          }
+        }
+      }
+    },
+    "Accounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "accountName": {
+            "type": "string",
+            "example": "WingTip Toys"
+          },
+          "primaryContact": {
+            "type": "string",
+            "example": "Bart Friday"
+          },
+          "contactEmail": {
+            "type": "string",
+            "example": "b.friday@wingtiptoys.com"
+          }
+        }
+      }
+    },
+    "SupportCases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Lynne Robbins"
+          },
+          "address": {
+            "type": "string",
+            "example": "3800 148th Ave NE"
+          },
+          "phone": {
+            "type": "string",
+            "example": "425-555-1234"
+          },
+          "email": {
+            "type": "string",
+            "example": "lrobbins@proseware.com"
+          },
+          "notes": {
+            "type": "string",
+            "example": "Financial Advisory"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "swagger.json",
+    "url": "/swagger.json"
+  }
+}

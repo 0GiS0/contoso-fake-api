@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const { INVOICES } = require('../util/data');
 
-
-
 router.get('/invoices', (req, res) => {
 
     /*#swagger.tags = ['Invoices']

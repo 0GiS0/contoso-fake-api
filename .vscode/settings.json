@@ -1,4 +1,5 @@
 {  
     "appService.deploySubpath": ".",
     "appService.defaultWebAppToDeploy": "/subscriptions/365e0b8c-357c-4db8-a1b2-523185ecb903/resourceGroups/apim-loves-powerplatform/providers/Microsoft.Web/sites/contoso-api",
+    "appService.enableOutputTimestamps": true    
 }

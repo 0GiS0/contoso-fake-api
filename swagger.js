@@ -23,11 +23,10 @@ const doc = {
     schemes: ['http', 'https'],
     consumes: ['application/json'],
     produces: ['application/json'],
-    // externalDocs: {
-    //     description: "swagger.json",
-    //     url: `http://${host}/swagger.json`
-    // },
-
+    externalDocs: {
+        description: "swagger.json",
+        url: `http://${host}/swagger.json`
+    },
     definitions: {
         Invoices: [{
             date: "2021-05-05",

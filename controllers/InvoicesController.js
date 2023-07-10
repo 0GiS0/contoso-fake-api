@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { faker } = require('@faker-js/faker');
+const { INVOICES } = require('../util/data');
+
 
 
 router.get('/invoices', (req, res) => {
@@ -14,21 +15,8 @@ router.get('/invoices', (req, res) => {
         schema: { $ref: '#/definitions/Invoices' }       
     }
     */
-    let invoices = [];
-
-    permittedStatus = ['Paid', 'Uninvoiced', 'Invoiced'];
-
-    for (let i = 0; i < 10; i++) {
-        invoices.push({
-
-            date: faker.date.past().toLocaleDateString('es-ES'),
-            accountName: faker.company.name(),
-            contact: faker.internet.email(),
-            price: parseFloat(faker.commerce.price()),
-            status: permittedStatus[Math.floor(Math.random() * permittedStatus.length)]
-        });
-    }
-    res.json(invoices);
+    console.log(INVOICES);
+    res.json(INVOICES);
 
 });
 

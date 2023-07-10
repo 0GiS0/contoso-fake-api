@@ -163,6 +163,6 @@
   },
   "externalDocs": {
     "description": "swagger.json",
-    "url": "/swagger.json"
+    "url": "http://localhost:3000/swagger.json"
   }
 }

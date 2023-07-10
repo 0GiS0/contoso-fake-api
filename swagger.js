@@ -1,7 +1,13 @@
 const swaggerAutogen = require('swagger-autogen')();
 
 // Get host dynamically
-const host = process.env.HOST || 'localhost:3000';
+const host = process.env.WEBSITE_HOSTNAME || 'localhost:3000';
+
+// Check environment variables
+console.log('WEBSITE_HOSTNAME: ' + process.env.WEBSITE_HOSTNAME);
+console.log('WEBSITE_INSTANCE_ID: ' + process.env.WEBSITE_INSTANCE_ID);
+console.log('WEBSITE_SITE_NAME: ' + process.env.WEBSITE_SITE_NAME);
+console.log('WEBSITE_SKU: ' + process.env.WEBSITE_SKU);
 
 const doc = {
     info: {
@@ -17,10 +23,10 @@ const doc = {
     schemes: ['http', 'https'],
     consumes: ['application/json'],
     produces: ['application/json'],
-    externalDocs: {
-        description: "swagger.json",
-        url: "/swagger.json"
-    },
+    // externalDocs: {
+    //     description: "swagger.json",
+    //     url: `http://${host}/swagger.json`
+    // },
 
     definitions: {
         Invoices: [{
@@ -48,6 +54,4 @@ const doc = {
 
 const outputFile = './swagger.json';
 
-swaggerAutogen(outputFile, ['./index.js'], doc).then(() => {
-    require('./index.js');
-});
+swaggerAutogen(outputFile, ['./index.js'], doc);

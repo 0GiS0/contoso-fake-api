@@ -4,9 +4,7 @@ let ACCOUNTS = [], INVOICES = [], SUPPORT_CASES = [];
 
 const init = () => {
 
-    // First the accounts
-    let accounts = [];
-
+    // First create the accounts
     for (let i = 0; i < 10; i++) {
         ACCOUNTS.push({
             id: i + 1,
@@ -16,10 +14,9 @@ const init = () => {
         });
     }
 
-    // Then the invoices using the accounts
-
     permittedStatus = ['Paid', 'Uninvoiced', 'Invoiced'];
 
+    // Next the invoices using the accounts
     for (let i = 0; i < 10; i++) {
         INVOICES.push({
             id: i + 1,
@@ -31,7 +28,7 @@ const init = () => {
         });
     }
 
-    // Last the support cases using the accounts  
+    // Finally the support cases using the accounts
     for (let i = 0; i < 10; i++) {
         SUPPORT_CASES.push({
             id: i + 1,

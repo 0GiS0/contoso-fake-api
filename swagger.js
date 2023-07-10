@@ -28,7 +28,17 @@ const doc = {
         url: `http://${host}/swagger.json`
     },
     definitions: {
+        Invoice: {
+            id: 1,
+            date: "2021-05-05",
+            accountName: "Franecki Group",
+            contact: "Cassidy.Lemke81@yahoo.com",
+            price: 380.00,
+            status: "Paid"
+
+        },
         Invoices: [{
+            id: 1,
             date: "2021-05-05",
             accountName: "Franecki Group",
             contact: "Cassidy.Lemke81@yahoo.com",
@@ -36,11 +46,13 @@ const doc = {
             status: "Paid"
         }],
         Accounts: [{
+            id: 1,
             accountName: "WingTip Toys",
             primaryContact: "Bart Friday",
             contactEmail: "b.friday@wingtiptoys.com"
         }],
         SupportCases: [{
+            id: 1,
             name: "Lynne Robbins",
             address: "3800 148th Ave NE",
             phone: "425-555-1234",

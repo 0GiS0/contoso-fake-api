@@ -13,6 +13,9 @@ const port = process.env.PORT || 3000;
 // Create an instance of express
 const app = express();
 
+// body-parser
+app.use(express.json());
+
 app.use(router);
 
 const options = {

@@ -9,6 +9,7 @@ const init = () => {
 
     for (let i = 0; i < 10; i++) {
         ACCOUNTS.push({
+            id: i + 1,
             accountName: faker.company.name(),
             primaryContact: faker.person.fullName(),
             email: faker.internet.email()
@@ -21,6 +22,7 @@ const init = () => {
 
     for (let i = 0; i < 10; i++) {
         INVOICES.push({
+            id: i + 1,
             date: faker.date.past().toLocaleDateString('es-ES'),
             accountName: ACCOUNTS[i].accountName,
             contact: ACCOUNTS[i].email,
@@ -32,6 +34,7 @@ const init = () => {
     // Last the support cases using the accounts  
     for (let i = 0; i < 10; i++) {
         SUPPORT_CASES.push({
+            id: i + 1,
             name: ACCOUNTS[i].primaryContact,
             address: faker.location.streetAddress(),
             phone: faker.phone.number(),

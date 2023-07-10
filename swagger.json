@@ -46,6 +46,121 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Invoices"
+        ],
+        "description": "",
+        "operationId": "createInvoice",
+        "parameters": [
+          {
+            "name": "newInvoice",
+            "in": "body",
+            "description": "Invoice to be created",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Invoice created successfully",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          }
+        }
+      }
+    },
+    "/invoices/{id}": {
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "description": "",
+        "operationId": "getInvoiceById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Invoice ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Invoice returned successfully",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          },
+          "404": {
+            "description": "Invoice not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Invoices"
+        ],
+        "description": "",
+        "operationId": "updateInvoice",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Invoice ID"
+          },
+          {
+            "name": "updatedInvoice",
+            "in": "body",
+            "description": "Invoice to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Invoice updated successfully",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          },
+          "404": {
+            "description": "Invoice not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Invoices"
+        ],
+        "description": "",
+        "operationId": "deleteInvoice",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "Invoice ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Invoice deleted successfully"
+          },
+          "404": {
+            "description": "Invoice not found"
+          }
+        }
       }
     },
     "/accounts": {
@@ -84,11 +199,44 @@
     }
   },
   "definitions": {
+    "Invoice": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "date": {
+          "type": "string",
+          "example": "2021-05-05"
+        },
+        "accountName": {
+          "type": "string",
+          "example": "Franecki Group"
+        },
+        "contact": {
+          "type": "string",
+          "example": "Cassidy.Lemke81@yahoo.com"
+        },
+        "price": {
+          "type": "number",
+          "example": 380
+        },
+        "status": {
+          "type": "string",
+          "example": "Paid"
+        }
+      }
+    },
     "Invoices": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "number",
+            "example": 1
+          },
           "date": {
             "type": "string",
             "example": "2021-05-05"
@@ -117,6 +265,10 @@
       "items": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "number",
+            "example": 1
+          },
           "accountName": {
             "type": "string",
             "example": "WingTip Toys"
@@ -137,6 +289,10 @@
       "items": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "number",
+            "example": 1
+          },
           "name": {
             "type": "string",
             "example": "Lynne Robbins"

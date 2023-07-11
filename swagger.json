@@ -21,16 +21,6 @@
     "application/json"
   ],
   "paths": {
-    "/swagger.json": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/invoices": {
       "get": {
         "tags": [

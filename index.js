@@ -32,4 +32,3 @@ app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
-
